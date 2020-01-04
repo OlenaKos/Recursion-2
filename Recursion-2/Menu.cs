@@ -20,8 +20,8 @@ namespace Recursion_2
                 {
                     if (i == Index)
                     {
-                        Console.BackgroundColor = ConsoleColor.DarkYellow;
-                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.BackgroundColor = ConsoleColor.Yellow;
+                        Console.ForegroundColor = ConsoleColor.Magenta;
                         Console.WriteLine(MenuItem[i]);
                     }
                     else
