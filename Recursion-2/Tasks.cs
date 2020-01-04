@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HomeTasks_01_6_Recursion
+namespace Recursion_2
 {
     class Tasks
     {
