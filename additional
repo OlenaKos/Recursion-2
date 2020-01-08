@@ -1,0 +1,139 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Recursion
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random random = new Random();
+            int n = random.Next(1, 50);
+
+            ReversePrint(n);
+
+            n = 10;
+            Console.WriteLine();
+            Sleepwalker(n);
+
+            Console.WriteLine();
+            n = random.Next(5, 10);
+            PrintTriangle(n);
+            Console.WriteLine();
+            PrintReverseTriangle(n);
+
+            n = random.Next(150, 15000);
+            Console.WriteLine("n = {0}", n);
+            PrintNumber(n);
+
+            Console.WriteLine();
+
+            n = random.Next(1, 150);
+            Console.WriteLine("Turn to binary {0}", n);
+            PrintBinaryValue(n);
+            Console.WriteLine();
+
+            string binaryNum = Convert.ToString(n, 2);
+            Console.WriteLine("turn to decimal value {0}", binaryNum);
+            PrintDecimalValue(binaryNum);
+
+            Console.ReadLine();
+        }
+
+        private static void PrintDecimalValue(string binaryNum)
+        {
+            
+        }
+
+        private static void PrintBinaryValue(int n)
+        {
+            if (n / 2 != 0)
+            {
+                PrintBinaryValue(n / 2);
+                Console.Write(n % 2);
+            }
+            else
+            {
+                Console.Write(n % 2);
+            }
+        }
+
+        private static void PrintNumber(int n)
+        {
+
+            if (n / 10 != 0)
+            {
+                PrintNumber(n / 10);
+                Console.Write(n % 10);
+                
+            }
+            else {
+                Console.Write(n % 10);
+            }
+        }
+
+        private static void PrintReverseTriangle(int n)
+        {
+            if (n > 0)
+            {
+
+                for (int i = 0; i < n; i++)
+                {
+                    Console.Write(n + " ");
+                }
+                Console.WriteLine();
+                PrintReverseTriangle(n - 1);
+            }
+        }
+
+        private static void PrintTriangle(int n)
+        {
+            if (n > 0)
+            {
+                PrintTriangle(n - 1);
+                for (int i = 0; i < n; i++)
+                {
+                    Console.Write(n + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        private static void Sleepwalker(int n)
+        {
+
+            if (n > 0)
+            {
+                Console.WriteLine("{0} sleepwalkers lived on the Moon", n);
+                Console.WriteLine("{0} sleepwalkers toss and turn in a dream", n);
+                Console.WriteLine("One sleepwalker fall off the Moon");
+                if (n - 1 == 0)
+                {
+                    Console.WriteLine("And no more sleepwalkers stay on the Moon");
+                }
+                else
+                {
+                    Console.WriteLine("{0} sleepwalkers left on the Moon", n - 1);
+                }
+                Sleepwalker(n - 1);
+            }
+
+        }
+
+        private static void ReversePrint(int n)
+        {
+            if (n <= 0)
+            {
+                Console.Write(n);
+            }
+            else
+            {
+                Console.Write(n + " ");
+                ReversePrint(n - 1);
+            }
+        }
+    }
+}
